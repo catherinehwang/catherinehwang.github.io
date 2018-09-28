@@ -11,13 +11,13 @@
       </div>
       <ul class="list-reset flex">
         <li>
-          <a href="#" class="p-2 text-white no-underline">About</a>
+          <a href="#about" class="p-2 text-white no-underline">About</a>
         </li>
         <li>
-          <a href="#" class="p-2 text-white no-underline">Projects</a>
+          <a href="#projects" class="p-2 text-white no-underline">Projects</a>
         </li>
         <li>
-          <a href="#" class="p-2 text-white no-underline">Contact</a>
+          <a href="#contact" class="p-2 text-white no-underline">Contact</a>
         </li>
     </nav>
     <!-- End Navigation -->
@@ -42,7 +42,7 @@
 
     <!-- Begin About -->
     <div class="container mx-auto">
-      <h1 class="my-2 leading-normal">About me</h1>
+      <h1 id="about" class="my-2 leading-normal">About me</h1>
       <p class="text-base my-2 leading-normal">Hello! I'm currently a Software Engineer at <a href="https://www.youtube.com/" class="text-blue no-underline">YouTube</a>. Before that, I was a Senior iOS Engineer at <a href="https://www.scribd.com" class="text-blue no-underline">Scribd</a>. I'm a graduate from <a href="https://www.berkeley.edu" class="text-blue no-underline">UC Berkeley</a> where I studied Electrical Engineering & Computer Science.</p>
       <p class="text-base my-2 leading-normal">In my spare time, I like to indulge another facet of my creativity through swing dancing. I teach and DJ in the San Francisco Bay Area. I also enjoy cooking and rock climbing.</p>
     </div>
@@ -51,7 +51,7 @@
 
     <!-- Begin Projects -->
     <div class="container mx-auto">
-      <h1 class="my-2 leading-normal">Projects</h1>
+      <h1 id="projects" class="my-2 leading-normal">Projects</h1>
       <div class="flex flex-col w-full">
         <div class="bg-white max-w-md mx-auto border border-grey-light mb-4">
           <img src="https://cdn-images-1.medium.com/max/1000/1*0SiPB4-TouBdJCpVwGwLdw.png" alt="">
@@ -73,7 +73,7 @@
 
     <!-- Begin Contact -->
     <div class="container mx-auto">
-      <h1 class="my-2 leading-normal">Contact</h1>
+      <h1 id="contact" class="my-2 leading-normal">Contact</h1>
       <div class="flex justify-center">
         <a href="mailto:catherinemhwang@gmail.com" class="no-underline">
           <button class="bg-white hover:bg-grey-lighter border border-grey-light font-bold py-2 px-4 m-2 rounded inline-flex items-center">
@@ -100,5 +100,22 @@
       </div>
     </div>
     <!-- End Contact -->
+
+    <!-- Begin Scripts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function (event) {
+      document.querySelectorAll('a[href*="#"]').forEach(function (element) {
+        var target = document.getElementById(element.hash.slice(1));
+        element.addEventListener('click', function (e) {
+          e.preventDefault();
+          target.scrollIntoView({
+            block: 'start',
+            behavior: 'smooth'
+          });
+        }, false);
+      });
+    });
+  </script>
+    <!-- End Scripts -->
   </body>
 </html>
